@@ -1,0 +1,32 @@
+title New Note Sequence
+
+note over browser:
+User clicks submit, browser makes a post request
+end note over 
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over server:
+Server persists the note and replies with a 302 redirect, 
+end note over 
+server->browser: 302 /location
+note over browser:
+The browser loads the notes html, and after downlowads the css and js files
+end note over 
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server->browser: 200 HTML-code
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server->browser:200  main.css
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server->browser: 200 main.js
+
+note over browser:
+The main.js code makes a get request to get all the notes
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "Hi, I'm a sequence", date: "2019-05-23" }, ...]
+
+note over browser:
+browser executes the callback to render all the notes
+end note
