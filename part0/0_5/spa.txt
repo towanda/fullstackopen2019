@@ -1,0 +1,27 @@
+title SPA New Note Sequence
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa
+server->browser: 200 spa HTML document
+
+note over browser
+broser renders html and requests css and js files
+end note
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/main.css
+server->browser: 200 main.css
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server->browser: 200 spa.js
+
+note over browser
+Browser applies css and executes js file. Js code makes a request to
+get all the notes
+end note
+
+browser->server: GET https://fullstack-exampleapp.herokuapp.com/data.json
+server->browser: 200 [{"content":"HTML is easy","date":"2019-05"},..]
+
+note over browser
+Js code updates the dom with the notes
+end note
+
