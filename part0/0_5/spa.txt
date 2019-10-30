@@ -1,4 +1,4 @@
-title SPA New Note Sequence
+title SPA Notes Sequence
 
 browser->server: GET https://fullstack-exampleapp.herokuapp.com/spa
 server->browser: 200 spa HTML document
